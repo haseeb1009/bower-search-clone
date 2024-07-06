@@ -3,19 +3,19 @@ import React, {
   ChangeEvent,
   useRef,
   useState,
-} from 'react'
+} from 'react';
 
 import {
   Checkbox,
   Input,
   Skeleton,
   Table,
-} from 'antd'
-import { CheckboxChangeEvent } from 'antd/es/checkbox'
+} from 'antd';
+import { CheckboxChangeEvent } from 'antd/es/checkbox';
 
-import useModules from '../hooks/useModules'
-import { ModuleType } from '../types/types'
-import { columns } from '../utils/columns'
+import useModules from '../hooks/useModules';
+import { ModuleType } from '../types/types';
+import { columns } from '../utils/columns';
 
 const { Search } = Input;
 
@@ -23,8 +23,9 @@ const Home: React.FC = () => {
   const [query, setQuery] = useState<string>('');
   const [currentPage, setCurrentPage] = useState<number>(1);
   const [sortByStars, setSortByStars] = useState<boolean>(false);
-  const debounceTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  
   const { data, loading, error } = useModules(query, currentPage, sortByStars);
+  const debounceTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     const input = event.target.value.trim();
@@ -62,7 +63,7 @@ const Home: React.FC = () => {
           className="table-container"
           rowKey={(record: ModuleType) => record.package_manager_url}
           columns={columns}
-          dataSource={error? [] : data}
+          dataSource={error ? [] : data}
           pagination={{
             position: ['bottomCenter'],
             current: currentPage,

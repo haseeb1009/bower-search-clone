@@ -1,10 +1,10 @@
-import React from 'react'
+import React from 'react';
 
 import {
   Layout,
   Menu,
-} from 'antd'
-import { Link } from 'react-router-dom'
+} from 'antd';
+import { Link } from 'react-router-dom';
 
 import {
   ApiOutlined,
@@ -14,7 +14,7 @@ import {
   LinkedinOutlined,
   MailOutlined,
   ToolOutlined,
-} from '@ant-design/icons'
+} from '@ant-design/icons';
 
 const { Sider } = Layout;
 
@@ -93,7 +93,7 @@ export const sideNavMenuItems = [
 ];
 
 const SideNav: React.FC = () => (
-  <Sider width={200} >
+  <Sider width={200}>
     <Menu items={sideNavMenuItems} />
   </Sider>
 );
