@@ -2,19 +2,19 @@ import React from 'react'
 
 import { ModuleType } from '../../types/types'
 
-interface LibrariesListProps {
-  libraries: ModuleType[];
+interface ModulesListProps {
+  Modules: ModuleType[]
 }
 
-const LibrariesList: React.FC<LibrariesListProps> = ({ libraries }) => (
+const ModulesList: React.FC<ModulesListProps> = ({ Modules }) => (
   <ul>
-    {libraries.map((library: ModuleType) => (
-      <li key={library.repository_url}>
-        <span>{library.name}</span> - <span>{library.description}</span> -{' '}
-        <span>{library.stars}</span>
+    {Modules.map((Module: ModuleType) => (
+      <li key={Module.repository_url}>
+        <span>{Module.name}</span> - <span>{Module.description}</span> -{' '}
+        <span>{Module.stars}</span>
       </li>
     ))}
   </ul>
-);
+)
 
-export default LibrariesList;
+export default ModulesList

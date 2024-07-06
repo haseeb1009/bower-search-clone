@@ -3,19 +3,19 @@ import React, {
   ChangeEvent,
   useRef,
   useState,
-} from 'react';
+} from 'react'
 
 import {
   Checkbox,
   Input,
   Skeleton,
   Table,
-} from 'antd';
-import { CheckboxChangeEvent } from 'antd/es/checkbox';
+} from 'antd'
+import { CheckboxChangeEvent } from 'antd/es/checkbox'
 
-import useModules from '../hooks/useModules';
-import { ModuleType } from '../types/types';
-import { columns } from '../utils/columns';
+import useModules from '../hooks/useModules'
+import { ModuleType } from '../types/types'
+import { columns } from '../utils/columns'
 
 const { Search } = Input;
 
@@ -62,7 +62,7 @@ const Home: React.FC = () => {
           className="table-container"
           rowKey={(record: ModuleType) => record.package_manager_url}
           columns={columns}
-          dataSource={data}
+          dataSource={error? [] : data}
           pagination={{
             position: ['bottomCenter'],
             current: currentPage,
