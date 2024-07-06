@@ -1,34 +1,32 @@
-import React from 'react'
+import React from 'react';
 
 import {
   Layout,
   Typography,
-} from 'antd'
+} from 'antd';
 
-const { Title, Paragraph, Text } = Typography
-const { Content } = Layout
+const { Title, Text } = Typography;
+const { Content } = Layout;
 
 const About: React.FC = () => {
   return (
     <Content>
       <Typography>
-        <Title level={2}>About This Project</Title>
-
-        <Paragraph>
+        <Title level={3}>About This Project</Title>
+        <p>
           This project is built with TypeScript and React, designed to mimic the
           behavior of the Bower search page. It fetches and displays a list of
           modules from the Libraries.io API, providing features like pagination,
           sorting, and searching.
-        </Paragraph>
+        </p>
 
         <Title level={3}>Assumptions</Title>
-        <Paragraph>
+        <p>
           <ul>
             <li>
               The API used is <Text code>Libraries.io</Text> and the endpoint is{' '}
               <Text code>{'https://libraries.io/api/search'}</Text>.
             </li>
-            <li>Pagination is implemented to display 5 items per page.</li>
             <li>
               The API does not return the total number od pages or records, So I
               have hardcoded the total pages to <Text>20</Text>
@@ -38,14 +36,13 @@ const About: React.FC = () => {
               calls and improve user experience.
             </li>
             <li>
-              <Text code>SWR</Text> is use to cache the response for better
-              user experience
+              <Text code>SWR</Text> is used to cache the response for better UX
             </li>
           </ul>
-        </Paragraph>
+        </p>
 
-        <Title level={3}>Setup and Running</Title>
-        <Paragraph>
+        <Title level={4}>Setup and Running</Title>
+        <p>
           <Text strong>To run this project locally:</Text>
           <ul>
             <li>Clone the repository</li>
@@ -59,15 +56,15 @@ const About: React.FC = () => {
               Run tests with <Text code>yarn test</Text>
             </li>
           </ul>
-        </Paragraph>
+        </p>
 
-        <Paragraph>
+        <p>
           Thank you for reviewing my submission. I look forward to your
           feedback.
-        </Paragraph>
+        </p>
       </Typography>
     </Content>
-  )
-}
+  );
+};
 
-export default About
+export default About;

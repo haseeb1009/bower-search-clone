@@ -39,12 +39,6 @@ export const columns: ColumnsType<ModuleType> = [
     sorter: (a, b) => a.stars - b.stars,
   },
   {
-    title: 'Forks',
-    dataIndex: 'forks',
-    key: 'forks',
-    sorter: (a, b) => a.forks - b.forks,
-  },
-  {
     title: 'Update',
     dataIndex: 'latest_release_published_at',
     key: 'latest_release_published_at',

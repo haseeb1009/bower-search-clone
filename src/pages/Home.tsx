@@ -57,7 +57,7 @@ const Home: React.FC = () => {
         Sort by Stars
       </Checkbox>
       {loading ? (
-        <Skeleton active />
+        <Skeleton className='skeleton' active />
       ) : (
         <Table
           className="table-container"

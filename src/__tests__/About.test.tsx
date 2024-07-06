@@ -1,11 +1,9 @@
-import React from 'react'
-
 import {
   render,
   screen,
-} from '@testing-library/react'
+} from '@testing-library/react';
 
-import About from '../pages/About'
+import About from '../pages/About';
 
 test('renders about page content', () => {
   render(<About />);
