@@ -5,7 +5,7 @@
 This is a React project (CSR), built with TypeScript and React Testing Library.
 
 ## Demo
-bowerclone.netlify.app
+[bowerclone.netlify.app](https://bowerclone.netlify.app/)
 
 ## Steps to follow:
 
