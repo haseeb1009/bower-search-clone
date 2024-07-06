@@ -36,10 +36,7 @@ export const columns: ColumnsType<ModuleType> = [
     title: 'Stars',
     dataIndex: 'stars',
     key: 'stars',
-    sorter: (a, b) => {
-      console.log(a, b);
-      return a.stars - b.stars;
-    },
+    sorter: (a, b) => a.stars - b.stars,
   },
   {
     title: 'Forks',
