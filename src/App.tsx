@@ -1,15 +1,15 @@
-import React from 'react'
+import React from 'react';
 
-import { Layout } from 'antd'
+import { Layout } from 'antd';
 import {
   BrowserRouter as Router,
   Route,
   Routes,
-} from 'react-router-dom'
+} from 'react-router-dom';
 
-import SideNav from './components/SideNav/SideNav'
-import About from './pages/About'
-import PackagesList from './pages/Home'
+import SideNav from './components/SideNav';
+import About from './pages/About';
+import PackagesList from './pages/Home';
 
 const { Header, Footer } = Layout;
 

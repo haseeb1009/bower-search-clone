@@ -24,17 +24,17 @@ const Home: React.FC = () => {
   const [currentPage, setCurrentPage] = useState<number>(1);
   const [sortByStars, setSortByStars] = useState<boolean>(false);
   
-  const { data, loading, error } = useModules(query, currentPage, sortByStars);
-  const debounceTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const { data, isLoading, error } = useModules(query, currentPage, sortByStars);
+  const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     const input = event.target.value.trim();
 
-    if (debounceTimeoutRef.current) {
-      clearTimeout(debounceTimeoutRef.current);
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
     }
     if (input !== query) {
-      debounceTimeoutRef.current = setTimeout(() => {
+      timeoutRef.current = setTimeout(() => {
         setQuery(input);
         setCurrentPage(1);
       }, 300);
@@ -49,14 +49,14 @@ const Home: React.FC = () => {
     <main>
       <Search
         className="search-bar"
-        disabled={loading}
+        disabled={isLoading}
         placeholder="Search Packages..."
         onChange={handleChange}
       />
       <Checkbox className="checkbox" onChange={handleSortChange}>
         Sort by Stars
       </Checkbox>
-      {loading ? (
+      {isLoading ? (
         <Skeleton className='skeleton' active />
       ) : (
         <Table
