@@ -38,6 +38,14 @@ const About: React.FC = () => {
             <li>
               <Text code>SWR</Text> is used to cache the response for better UX
             </li>
+            <li>
+              <Text mark>
+                API_KEY should not be part of the version control 
+              </Text>{' '}
+               but it was mentioned that code should execute by running
+              <Text code>yarn install and yarn start</Text>. That is why I kept that
+              in the code
+            </li>
           </ul>
         </p>
 
